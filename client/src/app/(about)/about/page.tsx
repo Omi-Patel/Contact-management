@@ -33,16 +33,16 @@ const page = () => {
         <div className="flex flex-col space-y-8 pb-10 pt-12 ">
           <div className="max-w-max rounded-full border bg-gray-50 dark:bg-zinc-700 p-1 px-3">
             <p className="text-xs font-semibold leading-normal md:text-sm">
-              About the company
+              About Our Application
             </p>
           </div>
           <p className="text-3xl font-bold text-gray-900 dark:text-gray-200 md:text-5xl md:leading-10">
             Made with love, right here in India
           </p>
           <p className="max-w-4xl text-base text-gray-600 dark:text-gray-400 md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            veritatis voluptates neque itaque repudiandae sint, explicabo
-            assumenda quam ratione placeat?
+            Our contact management application is designed to simplify how you
+            store, manage, and access your contacts, ensuring you stay connected
+            with everyone who matters to your business.
           </p>
         </div>
         <div className="w-full space-y-4">
@@ -68,9 +68,8 @@ const page = () => {
               Meet our team
             </p>
             <p className="max-w-4xl text-base text-gray-700 dark:text-gray-400 md:text-xl">
-              Our philosophy is simple — hire a team of diverse, passionate
-              people and foster a culture that empowers you to do your best
-              work.
+              We believe in the power of collaboration and innovation. Our team
+              is committed to delivering the best contact management experience.
             </p>
             <div></div>
           </div>
@@ -127,12 +126,11 @@ const page = () => {
               Join our team &rarr;
             </p>
             <p className="text-3xl font-bold md:text-4xl">
-              We&apos;re just getting started
+              Be Part of Our Journey
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 md:text-lg">
-              Our philosophy is simple — hire a team of diverse, passionate
-              people and foster a culture that empowers you to do your best
-              work.
+              We're constantly evolving and looking for talented individuals to
+              help us grow. Join us and make an impact!
             </p>
             <Button type="button">Join Now</Button>
           </div>

@@ -1,4 +1,6 @@
 import { Button } from "@nextui-org/react";
+import { Eye, PlusCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,26 +11,35 @@ export default function Home() {
             {/*  */}
             <div className="mt-10 flex max-w-max items-center space-x-2 rounded-full border p-2">
               <p className="text-xs font-medium md:text-sm">
-                Lorem ipsum dolor sit amet consectetur.
+                Stay organized and keep track of all your important contacts.
                 <span className="ml-2 cursor-pointer font-bold">
                   Read More &rarr;
                 </span>
               </p>
             </div>
             <h1 className="mt-8 max-w-4xl text-3xl font-bold tracking-tight text-black dark:text-white md:text-4xl lg:text-6xl">
-              People who really cares about your business
+              Manage Your Contacts Efficiently.
             </h1>
             <p className="mt-8 max-w-3xl text-lg text-gray-700 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              ipsam nulla aperiam quo possimus, nihil molestiae modi tenetur
-              esse qui repudiandae cum fuga aspernatur ea?
+              Our contact management application helps you store, organize, and
+              access all your contacts in one place, making it easier to stay
+              connected and manage relationships.
             </p>
             <div className="mt-8">
               <Button
+                color={"primary"}
                 type="button"
-                className="rounded-lg bg-black dark:bg-zinc-700 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 "
+                className="rounded-lg   py-2.5 text-sm font-semibold  shadow-sm px-0"
               >
-                Subscribe
+                <Link
+                  href={"/dashboard"}
+                  className=" flex gap-1 items-center justify-center p-2 px-3 "
+                >
+                  <span>
+                    <PlusCircle />
+                  </span>
+                  <span className="">Add New Contact</span>
+                </Link>
               </Button>
             </div>
           </div>
@@ -71,25 +82,36 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
-                  Lorem ipsum dolor sit amet consectetur dicta.
+                  Your Contacts, All in One Place.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat aliqua.
+                  Easily manage, search, and organize your contacts. Never lose
+                  touch with important people in your network again.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-2">
                   <Button
+                    color="primary"
                     type="button"
-                    className="rounded-lg bg-black px-3 py-2 text-sm font-semibold text-white  hover:bg-black/80 "
+                    className="rounded-lg  px-0 py-2 text-sm font-semibold "
                   >
-                    View Docs
+                    <Link
+                      href={"/dashboard"}
+                      className=" flex gap-1 items-center justify-center  p-2 px-3"
+                    >
+                      <Eye />
+                      <span className="">View Contacts</span>
+                    </Link>
                   </Button>
                   <Button
                     variant="bordered"
-                    className="rounded-lg  px-3 py-2 text-sm font-semibold text-black   dark:text-white "
+                    className="rounded-lg  px-0 py-2 text-sm font-semibold text-black   dark:text-white "
                   >
-                    Get Started
+                    <Link
+                      href={"/dashboard"}
+                      className=" flex gap-1 items-center justify-center  p-2 px-3"
+                    >
+                      Get Started
+                    </Link>
                   </Button>
                 </div>
               </div>
