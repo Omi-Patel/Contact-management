@@ -20,10 +20,13 @@ import { signinValidationSchema } from "@/validations/schema";
 import { signIn } from "@/services/apiService";
 import { useRouter } from "next/navigation";
 import useNotifications from "@/lib/notification";
+import { useState } from "react";
+import { Spinner } from "@nextui-org/react";
 
 export default function SigninForm() {
   const router = useRouter();
   const { successNotification, errorNotification } = useNotifications();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -32,6 +35,7 @@ export default function SigninForm() {
     },
     validationSchema: signinValidationSchema,
     onSubmit: async (values, { resetForm }) => {
+      setLoading(true);
       try {
         const res = await signIn(values);
 
@@ -39,9 +43,11 @@ export default function SigninForm() {
           successNotification("Success", "User SignIn Successfully..!");
           resetForm();
           router.push("/dashboard");
+          setLoading(false);
         }
       } catch (error: any) {
         errorNotification("Error", error.message);
+        setLoading(false);
       }
     },
   });
@@ -90,8 +96,19 @@ export default function SigninForm() {
                   {formik.errors.password}
                 </div>
               ) : null}
-              <Button type="submit" className="w-full">
-                Let&apos;s In
+              <Button type="submit" className="w-full" disabled={loading}>
+                <div className=" flex justify-center items-center  gap-4">
+                  Let&apos;s In
+                  <span>
+                    {loading && (
+                      <Spinner
+                        className="flex items-center"
+                        size="sm"
+                        color="success"
+                      />
+                    )}
+                  </span>
+                </div>
               </Button>
               <Button variant="outline" className="w-full">
                 Sign up with GitHub

@@ -20,10 +20,13 @@ import { CircleAlert } from "lucide-react";
 import { signUp } from "@/services/apiService";
 import { useRouter } from "next/navigation";
 import useNotifications from "@/lib/notification";
+import { useState } from "react";
+import { Spinner } from "@nextui-org/react";
 
 export default function SignupForm() {
   const router = useRouter();
   const { successNotification, errorNotification } = useNotifications();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -33,15 +36,18 @@ export default function SignupForm() {
     },
     validationSchema: signupValidationSchema,
     onSubmit: async (values, { resetForm }) => {
+      setLoading(true);
       try {
         const res = await signUp(values);
         if (res?.success) {
           successNotification("Success", "User SignUp Successfully..!");
           resetForm();
           router.push("/signin");
+          setLoading(false);
         }
       } catch (error: any) {
         errorNotification("Error", error.message);
+        setLoading(false);
       }
     },
   });
@@ -105,8 +111,19 @@ export default function SignupForm() {
                   </div>
                 ) : null}
               </div>
-              <Button type="submit" className="w-full">
-                Create an account
+              <Button type="submit" className="w-full" disabled={loading}>
+                <div className=" flex justify-center items-center  gap-4">
+                  Create an Account
+                  <span>
+                    {loading && (
+                      <Spinner
+                        className="flex items-center"
+                        size="sm"
+                        color="success"
+                      />
+                    )}
+                  </span>
+                </div>
               </Button>
               <Button variant="outline" className="w-full">
                 Sign up with GitHub
