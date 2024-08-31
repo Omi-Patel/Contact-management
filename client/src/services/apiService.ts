@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base URL for your API (adjust as needed)
-const API_BASE_URL = "http://localhost:5001/api";
+const API_BASE_URL = "https://nexcontact-server.onrender.com/api";
 
 // Function to set a cookie
 function setCookie(name: any, value: any, days: number) {
