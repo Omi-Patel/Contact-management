@@ -11,7 +11,9 @@ const app = express();
 connectDb();
 app.use(express.json());
 app.use(cors());
-
+app.get("/", (req, res) => {
+  res.send("Welcome to NexContact Application..!");
+});
 app.use("/api/contacts", contactRoute);
 app.use("/api/user", userRoute);
 app.use(errorHandler);
