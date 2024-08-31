@@ -11,10 +11,13 @@ export default function Home() {
             {/*  */}
             <div className="mt-10 flex max-w-max items-center space-x-2 rounded-full border p-2">
               <p className="text-xs font-medium md:text-sm">
-                Stay organized and keep track of all your important contacts.
-                <span className="ml-2 cursor-pointer font-bold">
+                Give it a star ⭐ on GitHub.
+                <a
+                  href="https://github.com/Omi-Patel"
+                  className="ml-2 cursor-pointer font-bold"
+                >
                   Read More &rarr;
-                </span>
+                </a>
               </p>
             </div>
             <h1 className="mt-8 max-w-4xl text-3xl font-bold tracking-tight text-black dark:text-white md:text-4xl lg:text-6xl">
