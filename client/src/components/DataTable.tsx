@@ -136,7 +136,7 @@ export default function DataTable({
                       <DialogHeader>
                         <DialogTitle>Add New Contact</DialogTitle>
                         <DialogDescription>
-                          Make changes to your list here. Click save when you're
+                          Make changes to your list here. Click save when you&apos;re
                           done.
                         </DialogDescription>
                       </DialogHeader>

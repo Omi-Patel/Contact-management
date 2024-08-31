@@ -21,7 +21,7 @@ const page = () => {
           </p>
           <p className="mx-auto max-w-3xl text-center text-base text-gray-600 dark:text-gray-400 md:text-xl">
             We love hearing from our customers! Whether you have feedback,
-            special requests, or simply want to say hello, don't hesitate to
+            special requests, or simply want to say hello, don&apos;t hesitate to
             reach out to us. Your input helps us continually improve and
             innovate our services.
           </p>

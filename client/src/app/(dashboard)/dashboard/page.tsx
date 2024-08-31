@@ -86,7 +86,7 @@ const Dashboard = () => {
             <DialogHeader>
               <DialogTitle>Add New Contact</DialogTitle>
               <DialogDescription>
-                Make changes to your list here. Click save when you're done.
+                Make changes to your list here. Click save when you&apos;re done.
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={formik.handleSubmit}>
@@ -176,7 +176,7 @@ const Dashboard = () => {
                 <DialogHeader>
                   <DialogTitle>Add New Contact</DialogTitle>
                   <DialogDescription>
-                    Make changes to your list here. Click save when you're done.
+                    Make changes to your list here. Click save when you&apos;re done.
                   </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={formik.handleSubmit}>

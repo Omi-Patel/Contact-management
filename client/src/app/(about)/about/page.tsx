@@ -129,8 +129,8 @@ const page = () => {
               Be Part of Our Journey
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 md:text-lg">
-              We're constantly evolving and looking for talented individuals to
-              help us grow. Join us and make an impact!
+              We&apos;re constantly evolving and looking for talented
+              individuals to help us grow. Join us and make an impact!
             </p>
             <Button type="button">Join Now</Button>
           </div>
