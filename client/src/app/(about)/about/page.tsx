@@ -12,16 +12,22 @@ import React from "react";
 
 const users = [
   {
-    name: "Jordi Santiago",
-    image:
-      "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    position: "Front-end developer",
+    name: "Dhruv Patel",
+    image: "https://avatars.githubusercontent.com/u/66352973?v=4",
+    position: "System Engineer At TCS",
+    instagram: "https://www.instagram.com/dhruv.p_t_l",
+    linkedin: "https://linkedin.com/in/ompatel7113",
+    github: "https://github.com/Patel47",
+    twitter: "https://x.com/om_patel07",
   },
   {
-    name: "Kerim Fahri",
-    image:
-      "https://images.unsplash.com/photo-1456327102063-fb5054efe647?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=600&w=600",
-    position: "Back-end developer",
+    name: "Om Patel",
+    image: "https://avatars.githubusercontent.com/u/122214228?v=4",
+    position: "Full Stack Developer",
+    instagram: "https://www.instagram.com/oh.me_07/",
+    linkedin: "https://linkedin.com/in/ompatel7113",
+    github: "https://github.com/Omi-Patel",
+    twitter: "https://x.com/om_patel07",
   },
 ];
 
@@ -95,22 +101,22 @@ const page = () => {
               </p>
               <div className="w-full px-4 pb-4 text-sm flex gap-4   text-gray-500 dark:text-gray-400">
                 <div className="hover:text-red-400">
-                  <Link href={"/"}>
+                  <Link href={user.instagram}>
                     <Instagram />
                   </Link>
                 </div>
                 <div className="hover:text-blue-700">
-                  <Link href={"/"}>
+                  <Link href={user.linkedin}>
                     <LinkedinIcon />
                   </Link>
                 </div>
                 <div className="hover:text-gray-500">
-                  <Link href={"/"}>
+                  <Link href={user.github}>
                     <GithubIcon />
                   </Link>
                 </div>
                 <div className="hover:text-blue-400">
-                  <Link href={"/"}>
+                  <Link href={user.twitter}>
                     <TwitterIcon />
                   </Link>
                 </div>
