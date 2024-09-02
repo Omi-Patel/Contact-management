@@ -23,6 +23,7 @@ import {
 } from "@/services/apiService";
 import DataTable from "@/components/DataTable";
 import SkeletonDemo from "@/components/SkeletonDemo";
+import { Spinner } from "@nextui-org/react";
 
 const Dashboard = () => {
   const { successNotification, errorNotification } = useNotifications();
@@ -37,6 +38,7 @@ const Dashboard = () => {
     validationSchema: addNewContactSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
+        setLoading(true);
         const res = await createContact(values);
 
         if (res.success) {
@@ -46,9 +48,12 @@ const Dashboard = () => {
           );
           resetForm();
           fetchData();
+          setLoading(false);
         }
       } catch (error: any) {
         errorNotification("Error", error.message);
+        resetForm();
+        setLoading(false);
       }
     },
   });
@@ -86,7 +91,8 @@ const Dashboard = () => {
             <DialogHeader>
               <DialogTitle>Add New Contact</DialogTitle>
               <DialogDescription>
-                Make changes to your list here. Click save when you&apos;re done.
+                Make changes to your list here. Click save when you&apos;re
+                done.
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={formik.handleSubmit}>
@@ -132,7 +138,20 @@ const Dashboard = () => {
                 </div>
               </div>
               <DialogFooter>
-                <Button type="submit">Save changes</Button>
+                <Button type="submit" disabled={loading}>
+                  <div className=" flex justify-center items-center gap-4">
+                    Save changes
+                    <span>
+                      {loading && (
+                        <Spinner
+                          className="flex items-center"
+                          size="sm"
+                          color="success"
+                        />
+                      )}
+                    </span>
+                  </div>
+                </Button>
               </DialogFooter>
             </form>
           </DialogContent>
@@ -176,7 +195,8 @@ const Dashboard = () => {
                 <DialogHeader>
                   <DialogTitle>Add New Contact</DialogTitle>
                   <DialogDescription>
-                    Make changes to your list here. Click save when you&apos;re done.
+                    Make changes to your list here. Click save when you&apos;re
+                    done.
                   </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={formik.handleSubmit}>
@@ -222,7 +242,20 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Button type="submit" disabled={loading}>
+                      <div className=" flex justify-center items-center  gap-4">
+                        Save changes
+                        <span>
+                          {loading && (
+                            <Spinner
+                              className="flex items-center"
+                              size="sm"
+                              color="success"
+                            />
+                          )}
+                        </span>
+                      </div>
+                    </Button>
                   </DialogFooter>
                 </form>
               </DialogContent>
