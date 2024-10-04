@@ -4,6 +4,8 @@ import { Label } from "@/components/ui/label";
 import { Image } from "@nextui-org/react";
 import { Send } from "lucide-react";
 import React from "react";
+import Form from "../Form";
+import Form2 from "./Form2";
 
 const page = () => {
   return (
@@ -37,7 +39,7 @@ const page = () => {
                 <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
                   Our friendly team would love to hear from you.
                 </p>
-                <form action="" className="mt-8 space-y-4">
+                {/* <form action="" className="mt-8 space-y-4">
                   <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-1">
                     <div className="grid w-full  items-center gap-1.5">
                       <Input type="text" id="name" placeholder="Name" />
@@ -66,7 +68,9 @@ const page = () => {
                     <Send size={16} />
                     Send Message
                   </Button>
-                </form>
+                </form> */}
+
+                <Form2 />
               </div>
             </div>
             <Image
