@@ -78,7 +78,7 @@ export default function Form2() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               type="hidden"
-              value="ce6d1708-9f8b-4922-9d84-e829101e2664"
+              value={process.env.NEXT_PUBLIC_ACCESS_KEY}
               {...register("access_key")}
             />
             <input type="hidden" {...register("subject")} />
@@ -151,10 +151,7 @@ export default function Form2() {
               )}
             </div>
 
-            <Button
-              type="submit"
-              className="w-full py-4  "
-            >
+            <Button type="submit" className="w-full py-4  ">
               {isSubmitting ? (
                 <svg
                   className="w-5 h-5 mx-auto text-white animate-spin"
@@ -163,7 +160,7 @@ export default function Form2() {
                   viewBox="0 0 24 24"
                 >
                   <circle
-                    className="opacity-25"
+                    className="opacity-50 text-blue-700"
                     cx="12"
                     cy="12"
                     r="10"
